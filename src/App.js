@@ -1,10 +1,10 @@
 import * as React from 'react'
 import {
   Box,
-  Grid
+  Grid,
+  Divider
 } from '@mui/material'
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
-import { border } from '@mui/system';
 
 const data = {
   typography: 'Tai~Dashboard',
@@ -25,6 +25,7 @@ const LeftGridcontainer = () => {
   return (
     <Box className='left-data'
       sx={{
+        margin: '1rem',
         position: 'relative',
         height: '97%',
         width: '90%',
@@ -33,10 +34,18 @@ const LeftGridcontainer = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyItems: 'center',
-        border: '1px solid black',
-        borderRadius: '5px'
+        borderRadius: '5px',
+        backgroundColor: 'rgb(31, 40, 62)',
+        boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px'
       }}>
       <LeftUpperContent />
+      <hr className='hr'
+        style={{
+          border : '0',
+          height: '1px',
+          width: '100%',
+          background : 'linear-gradient(to right, rgba(255, 255, 255, 0.005), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.005))'
+        }} />
     </Box>
   )
 }
@@ -48,7 +57,6 @@ const LeftUpperContent = () => {
         width: '80%',
         height: '5%',
         mt: 2,
-        borderBottom: '1.5px solid',
         textAlign: 'center',
       }}>
       <CurrencyExchangeIcon
