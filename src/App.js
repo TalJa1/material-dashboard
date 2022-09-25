@@ -2,13 +2,12 @@ import * as React from 'react'
 import {
   Box,
   Grid,
-  Divider
 } from '@mui/material'
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 
 const data = {
   typography: 'Tai~Dashboard',
-  router: [
+  routers: [
     'Dashboard',
     'Tables',
     'Billing',
@@ -28,7 +27,7 @@ const LeftGridcontainer = () => {
         margin: '1rem',
         position: 'relative',
         height: '97%',
-        width: '90%',
+        width: '250px',
         pt: 1,
         display: 'flex',
         flexDirection: 'column',
@@ -41,11 +40,43 @@ const LeftGridcontainer = () => {
       <LeftUpperContent />
       <hr className='hr'
         style={{
-          border : '0',
+          border: '0',
           height: '1px',
           width: '100%',
-          background : 'linear-gradient(to right, rgba(255, 255, 255, 0.005), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.005))'
+          background: 'linear-gradient(to right, rgba(255, 255, 255, 0.005), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.005))'
         }} />
+      <LeftMiddleContent />
+    </Box>
+  )
+}
+
+const LeftMiddleContent = () => {
+  return (
+    //Change it into ul tag
+    <Box className='middle-left'
+      sx={{
+        width: '100%'
+      }}>
+      {data.routers.map(x =>
+        <ul className='midle-left-data'
+          style={{
+            listStyleType: 'none',
+            textAlign: 'left',
+            padding: 0,
+            color: 'white',
+          }}>
+          <li>
+            <Grid container spacing={2}>
+              <Grid item xs={3}>
+                g
+              </Grid>
+              <Grid item xs={9}>
+                {x}
+              </Grid>
+            </Grid>
+          </li>
+        </ul>
+      )}
     </Box>
   )
 }
@@ -88,6 +119,7 @@ function App() {
         item xs={3}
         sx={{
           height: '100vh',
+          // width:'',
           backgroundAttachment: 'fixed',
         }}>
         <LeftGridcontainer />
